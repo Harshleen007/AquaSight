@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>water quality prediction</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+</head>
+<body><br><br>
+    <h1 style="text-align:center; font-size:60px; color: white; text-decoration:underline;  font-family: 'Josefin Sans', sans-serif;">Water Quality Prediction</h1>
+    <form action="{{ url_for('predict')}}" class="loginbox" method="post"><br>
+<center>
+    <input type="text" name="ph" placeholder="Enter pH value" required="required" /> &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="text" name="Hardness" placeholder="Enter Hardness" required="required" /><br><br>
+    <input type="text" name="Solids" placeholder="Enter Solids" required="required" />&nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="text" name="Chloramines" placeholder="Enter Chloramines" required="required" /><br><br>
+    <input type="text" name="Sulfate" placeholder="Enter Sulfate" required="required" />&nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="text" name="Conductivity" placeholder="Enter Conductivity" required="required" /><br><br>
+    <input type="text" name="Organic_carbon" placeholder="Enter Organic_carbon" required="required" />&nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="text" name="Trihalomethanes" placeholder="Enter Trihalomethanes" required="required" /><br><br>
+    <input type="text" name="Turbidity" placeholder="Enter Turbidity" required="required" /><br><br>
+    <button type="submit" class="btn btn-light btn-outline-success" id="sendMessageButton">Predict</button>
+</form>
+<h1 style="color: white; font-family: 'Josefin Sans', sans-serif;">{{prediction_text }}</h1>
+</center>
+</body>
+</html>
